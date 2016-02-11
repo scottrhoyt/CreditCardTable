@@ -17,6 +17,8 @@
 		3B3880931C6C574F0029BAA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B3880911C6C574F0029BAA9 /* LaunchScreen.storyboard */; };
 		3B38809C1C6C61690029BAA9 /* CreditCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B38809A1C6C61690029BAA9 /* CreditCardTableViewController.swift */; };
 		3B38809D1C6C61690029BAA9 /* CreditCardTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B38809B1C6C61690029BAA9 /* CreditCardTableViewController.xib */; };
+		3B3880A01C6C62680029BAA9 /* CreditCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B38809E1C6C62680029BAA9 /* CreditCardCell.swift */; };
+		3B3880A11C6C62680029BAA9 /* CreditCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B38809F1C6C62680029BAA9 /* CreditCardCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		3B3880941C6C574F0029BAA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B38809A1C6C61690029BAA9 /* CreditCardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardTableViewController.swift; sourceTree = "<group>"; };
 		3B38809B1C6C61690029BAA9 /* CreditCardTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditCardTableViewController.xib; sourceTree = "<group>"; };
+		3B38809E1C6C62680029BAA9 /* CreditCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardCell.swift; sourceTree = "<group>"; };
+		3B38809F1C6C62680029BAA9 /* CreditCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditCardCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 				3B38806D1C6C56CA0029BAA9 /* Info.plist */,
 				3B38809A1C6C61690029BAA9 /* CreditCardTableViewController.swift */,
 				3B38809B1C6C61690029BAA9 /* CreditCardTableViewController.xib */,
+				3B38809E1C6C62680029BAA9 /* CreditCardCell.swift */,
+				3B38809F1C6C62680029BAA9 /* CreditCardCell.xib */,
 			);
 			path = CreditCardTable;
 			sourceTree = "<group>";
@@ -239,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B3880A11C6C62680029BAA9 /* CreditCardCell.xib in Resources */,
 				3B38809D1C6C61690029BAA9 /* CreditCardTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B3880A01C6C62680029BAA9 /* CreditCardCell.swift in Sources */,
 				3B38809C1C6C61690029BAA9 /* CreditCardTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
