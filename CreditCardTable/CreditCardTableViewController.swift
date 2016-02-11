@@ -11,6 +11,7 @@ import UIKit
 public class CreditCardTableViewController: UITableViewController {
     
     public var creditCards = [CreditCard]()
+    public var allowDeletingLastCard = false
     
     public convenience init() {
         self.init(nibName: "CreditCardTableViewController", bundle: NSBundle(forClass: CreditCardTableViewController.self))
@@ -23,7 +24,7 @@ public class CreditCardTableViewController: UITableViewController {
         navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    // MARK: - Table view data source
+    // MARK: - UITableViewController
 
     override public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -47,7 +48,9 @@ public class CreditCardTableViewController: UITableViewController {
     
     // Override to support conditional editing of the table view.
     override public func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
+        if !allowDeletingLastCard && creditCards.count <= 1 {
+            return false
+        }
         return true
     }
     
