@@ -19,6 +19,8 @@
 		3B38809D1C6C61690029BAA9 /* CreditCardTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B38809B1C6C61690029BAA9 /* CreditCardTableViewController.xib */; };
 		3B3880A01C6C62680029BAA9 /* CreditCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B38809E1C6C62680029BAA9 /* CreditCardCell.swift */; };
 		3B3880A11C6C62680029BAA9 /* CreditCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B38809F1C6C62680029BAA9 /* CreditCardCell.xib */; };
+		3B3880A31C6C69740029BAA9 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3880A21C6C69740029BAA9 /* CreditCard.swift */; };
+		3B3880A51C6C710B0029BAA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B3880A41C6C710B0029BAA9 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		3B38809B1C6C61690029BAA9 /* CreditCardTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditCardTableViewController.xib; sourceTree = "<group>"; };
 		3B38809E1C6C62680029BAA9 /* CreditCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardCell.swift; sourceTree = "<group>"; };
 		3B38809F1C6C62680029BAA9 /* CreditCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditCardCell.xib; sourceTree = "<group>"; };
+		3B3880A21C6C69740029BAA9 /* CreditCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
+		3B3880A41C6C710B0029BAA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				3B38809B1C6C61690029BAA9 /* CreditCardTableViewController.xib */,
 				3B38809E1C6C62680029BAA9 /* CreditCardCell.swift */,
 				3B38809F1C6C62680029BAA9 /* CreditCardCell.xib */,
+				3B3880A21C6C69740029BAA9 /* CreditCard.swift */,
+				3B3880A41C6C710B0029BAA9 /* Assets.xcassets */,
 			);
 			path = CreditCardTable;
 			sourceTree = "<group>";
@@ -246,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B3880A11C6C62680029BAA9 /* CreditCardCell.xib in Resources */,
+				3B3880A51C6C710B0029BAA9 /* Assets.xcassets in Resources */,
 				3B38809D1C6C61690029BAA9 /* CreditCardTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B3880A31C6C69740029BAA9 /* CreditCard.swift in Sources */,
 				3B3880A01C6C62680029BAA9 /* CreditCardCell.swift in Sources */,
 				3B38809C1C6C61690029BAA9 /* CreditCardTableViewController.swift in Sources */,
 			);
