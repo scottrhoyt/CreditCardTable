@@ -15,6 +15,8 @@
 		3B38808E1C6C574F0029BAA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B38808C1C6C574F0029BAA9 /* Main.storyboard */; };
 		3B3880901C6C574F0029BAA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B38808F1C6C574F0029BAA9 /* Assets.xcassets */; };
 		3B3880931C6C574F0029BAA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B3880911C6C574F0029BAA9 /* LaunchScreen.storyboard */; };
+		3B38809C1C6C61690029BAA9 /* CreditCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B38809A1C6C61690029BAA9 /* CreditCardTableViewController.swift */; };
+		3B38809D1C6C61690029BAA9 /* CreditCardTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B38809B1C6C61690029BAA9 /* CreditCardTableViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 		3B38808F1C6C574F0029BAA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B3880921C6C574F0029BAA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B3880941C6C574F0029BAA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B38809A1C6C61690029BAA9 /* CreditCardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardTableViewController.swift; sourceTree = "<group>"; };
+		3B38809B1C6C61690029BAA9 /* CreditCardTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditCardTableViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 			children = (
 				3B38806B1C6C56CA0029BAA9 /* CreditCardTable.h */,
 				3B38806D1C6C56CA0029BAA9 /* Info.plist */,
+				3B38809A1C6C61690029BAA9 /* CreditCardTableViewController.swift */,
+				3B38809B1C6C61690029BAA9 /* CreditCardTableViewController.xib */,
 			);
 			path = CreditCardTable;
 			sourceTree = "<group>";
@@ -233,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B38809D1C6C61690029BAA9 /* CreditCardTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B38809C1C6C61690029BAA9 /* CreditCardTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +410,7 @@
 		3B38807D1C6C56CA0029BAA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -413,12 +422,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.scotthoyt.CreditCardTable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		3B38807E1C6C56CA0029BAA9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
