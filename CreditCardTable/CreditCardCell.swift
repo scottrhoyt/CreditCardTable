@@ -9,6 +9,10 @@
 import UIKit
 
 class CreditCardCell: UITableViewCell {
+    static let reuseId = "CreditCardCell"
+    @IBOutlet weak var ccType: UIImageView!
+    @IBOutlet weak var ccNumber: UILabel!
+    @IBOutlet weak var ccExpDate: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
