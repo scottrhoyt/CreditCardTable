@@ -19,7 +19,6 @@ public class CreditCardTableViewController: UITableViewController {
         
     override public func viewDidLoad() {
         super.viewDidLoad()
-        //tableView.registerClass(CreditCardCell.self, forCellReuseIdentifier: CreditCardCell.reuseId)
         tableView.registerNib(UINib(nibName: "CreditCardCell", bundle: NSBundle(forClass: CreditCardCell.self)), forCellReuseIdentifier: CreditCardCell.reuseId)
         navigationItem.rightBarButtonItem = self.editButtonItem()
     }
@@ -34,7 +33,6 @@ public class CreditCardTableViewController: UITableViewController {
         return creditCards.count
     }
 
-    
     override public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCellWithIdentifier(CreditCardCell.reuseId) as? CreditCardCell else {
             return UITableViewCell()
@@ -44,8 +42,6 @@ public class CreditCardTableViewController: UITableViewController {
         return cell
     }
     
-
-    
     // Override to support conditional editing of the table view.
     override public func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         if !allowDeletingLastCard && creditCards.count <= 1 {
@@ -53,8 +49,6 @@ public class CreditCardTableViewController: UITableViewController {
         }
         return true
     }
-    
-
     
     // Override to support editing the table view.
     override public func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {

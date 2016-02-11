@@ -33,17 +33,6 @@ class CreditCardCell: UITableViewCell {
     @IBOutlet weak var ccType: UIImageView!
     @IBOutlet weak var ccExpDate: UILabel!
     @IBOutlet weak var ccNumber: UILabel!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     func setCreditCardInfo(creditCard: CreditCard) {
         let lastFour = creditCard.number.last(4)
