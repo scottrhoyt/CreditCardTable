@@ -77,13 +77,20 @@ public class CreditCardTableViewController: UITableViewController {
         }    
     }
     
-    public override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+    override public func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
         if isAddCell(indexPath) {
             delegate?.addCard()
         }
         return nil
     }
     
+    override public func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        if !allowDeletingLastCard && creditCards.count <= 1 {
+            return "You must have at least one card stored."
+        }
+        return nil
+    }
+
     private func isAddCell(indexPath: NSIndexPath) -> Bool {
         return indexPath.row == (tableView.numberOfRowsInSection(0) - 1)
     }
