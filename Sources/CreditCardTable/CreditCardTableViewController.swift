@@ -10,6 +10,7 @@ import UIKit
 
 public protocol CreditCardControllerDelegate: class {
     func deletedCard(card: CreditCard)
+    func addCard()
 }
 
 public class CreditCardTableViewController: UITableViewController {
@@ -24,7 +25,8 @@ public class CreditCardTableViewController: UITableViewController {
         
     override public func viewDidLoad() {
         super.viewDidLoad()
-        tableView.registerNib(UINib(nibName: "CreditCardCell", bundle: NSBundle(forClass: CreditCardCell.self)), forCellReuseIdentifier: CreditCardCell.reuseId)
+        tableView.registerNib(UINib(nameInCurrentBund: "CreditCardCell"), forCellReuseIdentifier: CreditCardCell.reuseId)
+        tableView.registerNib(UINib(nameInCurrentBund: "AddCardCell"), forCellReuseIdentifier: AddCardCell.reuseId)
         navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
@@ -35,22 +37,30 @@ public class CreditCardTableViewController: UITableViewController {
     }
 
     override public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return creditCards.count
+        return creditCards.count + 1
     }
 
     override public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCellWithIdentifier(CreditCardCell.reuseId) as? CreditCardCell else {
-            return UITableViewCell()
+        if isAddCell(indexPath) {
+            if let cell = tableView.dequeueReusableCellWithIdentifier(AddCardCell.reuseId) as? AddCardCell {
+                return cell
+            }
+        }
+        
+        if let cell = tableView.dequeueReusableCellWithIdentifier(CreditCardCell.reuseId) as? CreditCardCell {
+            cell.setCreditCardInfo(creditCards[indexPath.row])
+            return cell
         }
 
-        cell.setCreditCardInfo(creditCards[indexPath.row])
-        return cell
+        return UITableViewCell()
     }
     
     // Override to support conditional editing of the table view.
     override public func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         if !allowDeletingLastCard && creditCards.count <= 1 {
             print("Deleting last credit card is disabled.")
+            return false
+        } else if isAddCell(indexPath) {
             return false
         }
         return true
@@ -65,5 +75,25 @@ public class CreditCardTableViewController: UITableViewController {
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
+    }
+    
+    public override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        if isAddCell(indexPath) {
+            delegate?.addCard()
+        }
+        return nil
+    }
+    
+    private func isAddCell(indexPath: NSIndexPath) -> Bool {
+        return indexPath.row == (tableView.numberOfRowsInSection(0) - 1)
+    }
+}
+
+// MARK - UINib
+
+extension UINib {
+    convenience init(nameInCurrentBund: String) {
+        let bundle = NSBundle(forClass: CreditCardTableViewController.self)
+        self.init(nibName: nameInCurrentBund, bundle: bundle)
     }
 }

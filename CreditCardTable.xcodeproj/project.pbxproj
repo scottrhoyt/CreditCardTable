@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B133A391C6D2CCA00ADF9CB /* AddCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B133A371C6D2CCA00ADF9CB /* AddCardCell.swift */; };
+		3B133A3A1C6D2CCA00ADF9CB /* AddCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B133A381C6D2CCA00ADF9CB /* AddCardCell.xib */; };
 		3B38806C1C6C56CA0029BAA9 /* CreditCardTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B38806B1C6C56CA0029BAA9 /* CreditCardTable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B3880731C6C56CA0029BAA9 /* CreditCardTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3880681C6C56CA0029BAA9 /* CreditCardTable.framework */; };
 		3B3880781C6C56CA0029BAA9 /* CreditCardTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3880771C6C56CA0029BAA9 /* CreditCardTableTests.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B133A371C6D2CCA00ADF9CB /* AddCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardCell.swift; sourceTree = "<group>"; };
+		3B133A381C6D2CCA00ADF9CB /* AddCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCardCell.xib; sourceTree = "<group>"; };
 		3B3880681C6C56CA0029BAA9 /* CreditCardTable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CreditCardTable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B38806B1C6C56CA0029BAA9 /* CreditCardTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreditCardTable.h; sourceTree = "<group>"; };
 		3B38806D1C6C56CA0029BAA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 				3B38809F1C6C62680029BAA9 /* CreditCardCell.xib */,
 				3B3880A21C6C69740029BAA9 /* CreditCard.swift */,
 				3B3880A41C6C710B0029BAA9 /* Assets.xcassets */,
+				3B133A371C6D2CCA00ADF9CB /* AddCardCell.swift */,
+				3B133A381C6D2CCA00ADF9CB /* AddCardCell.xib */,
 			);
 			name = CreditCardTable;
 			path = Sources/CreditCardTable;
@@ -259,6 +265,7 @@
 				3B3880A11C6C62680029BAA9 /* CreditCardCell.xib in Resources */,
 				3B3880A51C6C710B0029BAA9 /* Assets.xcassets in Resources */,
 				3B38809D1C6C61690029BAA9 /* CreditCardTableViewController.xib in Resources */,
+				3B133A3A1C6D2CCA00ADF9CB /* AddCardCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +296,7 @@
 				3B3880A31C6C69740029BAA9 /* CreditCard.swift in Sources */,
 				3B3880A01C6C62680029BAA9 /* CreditCardCell.swift in Sources */,
 				3B38809C1C6C61690029BAA9 /* CreditCardTableViewController.swift in Sources */,
+				3B133A391C6D2CCA00ADF9CB /* AddCardCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,6 +534,7 @@
 				3B38807E1C6C56CA0029BAA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3B38807F1C6C56CA0029BAA9 /* Build configuration list for PBXNativeTarget "CreditCardTableTests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +543,7 @@
 				3B3880811C6C56CA0029BAA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3B3880951C6C574F0029BAA9 /* Build configuration list for PBXNativeTarget "CreditCardTableExample" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +552,7 @@
 				3B3880971C6C574F0029BAA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
