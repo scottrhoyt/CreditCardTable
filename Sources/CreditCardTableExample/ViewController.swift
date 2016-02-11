@@ -25,8 +25,15 @@ class ViewController: UIViewController {
         let amex = MyCreditCard(type: .Amex, number: "4242", expMonth: 2, expYear: 2016)
         let cards: [CreditCard] = [visa, masterCard, amex]
         let creditCardView = CreditCardTableViewController()
+        creditCardView.delegate = self
         creditCardView.creditCards = cards
         showViewController(creditCardView, sender: self)
+    }
+}
+
+extension ViewController: CreditCardControllerDelegate {
+    func deletedCard(card: CreditCard) {
+        print("Deleted Card: \(card)")
     }
 }
 

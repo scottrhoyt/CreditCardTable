@@ -8,10 +8,15 @@
 
 import UIKit
 
+public protocol CreditCardControllerDelegate: class {
+    func deletedCard(card: CreditCard)
+}
+
 public class CreditCardTableViewController: UITableViewController {
     
     public var creditCards = [CreditCard]()
     public var allowDeletingLastCard = false
+    public weak var delegate: CreditCardControllerDelegate?
     
     public convenience init() {
         self.init(nibName: "CreditCardTableViewController", bundle: NSBundle(forClass: CreditCardTableViewController.self))
@@ -45,6 +50,7 @@ public class CreditCardTableViewController: UITableViewController {
     // Override to support conditional editing of the table view.
     override public func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         if !allowDeletingLastCard && creditCards.count <= 1 {
+            print("Deleting last credit card is disabled.")
             return false
         }
         return true
@@ -53,8 +59,9 @@ public class CreditCardTableViewController: UITableViewController {
     // Override to support editing the table view.
     override public func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            creditCards.removeAtIndex(indexPath.row)
+            let deletedCard = creditCards.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            delegate?.deletedCard(deletedCard)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
