@@ -21,6 +21,7 @@
 		3B3880A11C6C62680029BAA9 /* CreditCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B38809F1C6C62680029BAA9 /* CreditCardCell.xib */; };
 		3B3880A31C6C69740029BAA9 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3880A21C6C69740029BAA9 /* CreditCard.swift */; };
 		3B3880A51C6C710B0029BAA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B3880A41C6C710B0029BAA9 /* Assets.xcassets */; };
+		3B3880A61C6C73840029BAA9 /* CreditCardTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3880681C6C56CA0029BAA9 /* CreditCardTable.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B3880A61C6C73840029BAA9 /* CreditCardTable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

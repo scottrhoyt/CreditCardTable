@@ -7,19 +7,26 @@
 //
 
 import UIKit
+import CreditCardTable
+
+struct MyCreditCard: CreditCard {
+    var type: CreditCardType
+    var number: String
+    var expMonth: Int
+    var expYear: Int
+}
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        let visa = MyCreditCard(type: .Visa, number: "4242", expMonth: 2, expYear: 2016)
+        let masterCard = MyCreditCard(type: .MasterCard, number: "4242", expMonth: 2, expYear: 2016)
+        let amex = MyCreditCard(type: .Amex, number: "4242", expMonth: 2, expYear: 2016)
+        let cards: [CreditCard] = [visa, masterCard, amex]
+        let creditCardView = CreditCardTableViewController()
+        creditCardView.creditCards = cards
+        showViewController(creditCardView, sender: self)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 

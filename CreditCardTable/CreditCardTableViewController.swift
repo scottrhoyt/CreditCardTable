@@ -11,10 +11,15 @@ import UIKit
 public class CreditCardTableViewController: UITableViewController {
     
     public var creditCards = [CreditCard]()
+    
+    public convenience init() {
+        self.init(nibName: "CreditCardTableViewController", bundle: NSBundle(forClass: CreditCardTableViewController.self))
+    }
         
     override public func viewDidLoad() {
         super.viewDidLoad()
-        tableView.registerClass(CreditCardCell.self, forCellReuseIdentifier: CreditCardCell.reuseId)
+        //tableView.registerClass(CreditCardCell.self, forCellReuseIdentifier: CreditCardCell.reuseId)
+        tableView.registerNib(UINib(nibName: "CreditCardCell", bundle: NSBundle(forClass: CreditCardCell.self)), forCellReuseIdentifier: CreditCardCell.reuseId)
         navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
@@ -33,7 +38,7 @@ public class CreditCardTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCellWithIdentifier(CreditCardCell.reuseId) as? CreditCardCell else {
             return UITableViewCell()
         }
-        
+
         cell.setCreditCardInfo(creditCards[indexPath.row])
         return cell
     }
@@ -51,26 +56,10 @@ public class CreditCardTableViewController: UITableViewController {
     // Override to support editing the table view.
     override public func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
+            creditCards.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 }
