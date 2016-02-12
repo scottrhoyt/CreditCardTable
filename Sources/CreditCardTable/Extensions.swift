@@ -12,7 +12,7 @@ import Foundation
 
 extension NSBundle {
     class var thisBundle: NSBundle {
-        return NSBundle(forClass: CreditCardController.self)
+        return NSBundle(forClass: CreditCardTable.self)
     }
 }
 

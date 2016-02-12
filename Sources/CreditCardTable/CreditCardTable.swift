@@ -8,19 +8,19 @@
 
 import UIKit
 
-public protocol CreditCardControllerDelegate: class {
+public protocol CreditCardTableDelegate: class {
     func deletedCard(card: CreditCard)
     func addCard()
 }
 
-public class CreditCardController: UITableViewController {
+public class CreditCardTable: UITableViewController {
 
     public var creditCards = [CreditCard]()
     public var allowDeletingLastCard = false
-    public weak var delegate: CreditCardControllerDelegate?
+    public weak var delegate: CreditCardTableDelegate?
 
     public convenience init() {
-        self.init(nibName: "CreditCardController", bundle: NSBundle(forClass: CreditCardController.self))
+        self.init(nibName: "CreditCardTable", bundle: NSBundle.thisBundle)
     }
 
     override public func viewDidLoad() {
