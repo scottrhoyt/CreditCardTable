@@ -9,7 +9,6 @@
 import UIKit
 
 class AddCardCell: UITableViewCell {
-    
+
     static let reuseId = "AddCardCell"
-    
 }

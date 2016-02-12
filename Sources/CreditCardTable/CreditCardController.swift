@@ -14,15 +14,15 @@ public protocol CreditCardControllerDelegate: class {
 }
 
 public class CreditCardController: UITableViewController {
-    
+
     public var creditCards = [CreditCard]()
     public var allowDeletingLastCard = false
     public weak var delegate: CreditCardControllerDelegate?
-    
+
     public convenience init() {
         self.init(nibName: "CreditCardController", bundle: NSBundle(forClass: CreditCardController.self))
     }
-        
+
     override public func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerNib(UINib(nameInCurrentBundle: "CreditCardCell"), forCellReuseIdentifier: CreditCardCell.reuseId)
@@ -46,7 +46,7 @@ public class CreditCardController: UITableViewController {
                 return cell
             }
         }
-        
+
         if let cell = tableView.dequeueReusableCellWithIdentifier(CreditCardCell.reuseId) as? CreditCardCell {
             cell.setCreditCardInfo(creditCards[indexPath.row])
             return cell
@@ -54,7 +54,7 @@ public class CreditCardController: UITableViewController {
 
         return UITableViewCell()
     }
-    
+
     override public func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         if !allowDeletingLastCard && creditCards.count <= 1 {
             print("Deleting last credit card is disabled.")
@@ -64,8 +64,8 @@ public class CreditCardController: UITableViewController {
         }
         return true
     }
-    
-    // Override to support editing the table view.
+
+    // swiftlint:disable:next line_length
     override public func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             let deletedCard = creditCards.removeAtIndex(indexPath.row)
@@ -74,20 +74,20 @@ public class CreditCardController: UITableViewController {
             updateFooter()
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    
+
     override public func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
         if isAddCell(indexPath) {
             delegate?.addCard()
         }
         return nil
     }
-    
+
     override public func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return footerTitle()
     }
-    
+
     override public func tableView(tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         if let view = view as? UITableViewHeaderFooterView {
             view.textLabel?.textAlignment = .Center
@@ -97,27 +97,18 @@ public class CreditCardController: UITableViewController {
     private func isAddCell(indexPath: NSIndexPath) -> Bool {
         return indexPath.row == (tableView.numberOfRowsInSection(0) - 1)
     }
-    
+
     private func updateFooter() {
         let footer = tableView.footerViewForSection(0)
         footer?.textLabel?.text = footerTitle()
         footer?.setNeedsLayout()
     }
-    
+
     private func footerTitle() -> String {
         if !allowDeletingLastCard && creditCards.count <= 1 {
             return "You must have at least one card stored."
         }
-        
+
         return "Swipe to delete cards."
-    }
-}
-
-// MARK - UINib
-
-extension UINib {
-    convenience init(nameInCurrentBundle: String) {
-        let bundle = NSBundle(forClass: CreditCardController.self)
-        self.init(nibName: nameInCurrentBundle, bundle: bundle)
     }
 }

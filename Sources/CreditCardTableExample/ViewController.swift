@@ -36,9 +36,8 @@ extension ViewController: CreditCardControllerDelegate {
     func deletedCard(card: CreditCard) {
         print("Deleted Card: \(card)")
     }
-    
+
     func addCard() {
         print("Add Card")
     }
 }
-

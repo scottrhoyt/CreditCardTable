@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3B133A391C6D2CCA00ADF9CB /* AddCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B133A371C6D2CCA00ADF9CB /* AddCardCell.swift */; };
 		3B133A3A1C6D2CCA00ADF9CB /* AddCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B133A381C6D2CCA00ADF9CB /* AddCardCell.xib */; };
+		3B133A411C6DA28F00ADF9CB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B133A401C6DA28F00ADF9CB /* Extensions.swift */; };
 		3B38806C1C6C56CA0029BAA9 /* CreditCardTable.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B38806B1C6C56CA0029BAA9 /* CreditCardTable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B3880731C6C56CA0029BAA9 /* CreditCardTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3880681C6C56CA0029BAA9 /* CreditCardTable.framework */; };
 		3B3880781C6C56CA0029BAA9 /* CreditCardTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3880771C6C56CA0029BAA9 /* CreditCardTableTests.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		3B133A371C6D2CCA00ADF9CB /* AddCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCardCell.swift; sourceTree = "<group>"; };
 		3B133A381C6D2CCA00ADF9CB /* AddCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCardCell.xib; sourceTree = "<group>"; };
+		3B133A401C6DA28F00ADF9CB /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3B3880681C6C56CA0029BAA9 /* CreditCardTable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CreditCardTable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B38806B1C6C56CA0029BAA9 /* CreditCardTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreditCardTable.h; sourceTree = "<group>"; };
 		3B38806D1C6C56CA0029BAA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				3B3880A41C6C710B0029BAA9 /* Assets.xcassets */,
 				3B133A371C6D2CCA00ADF9CB /* AddCardCell.swift */,
 				3B133A381C6D2CCA00ADF9CB /* AddCardCell.xib */,
+				3B133A401C6DA28F00ADF9CB /* Extensions.swift */,
 			);
 			name = CreditCardTable;
 			path = Sources/CreditCardTable;
@@ -171,6 +174,7 @@
 				3B3880641C6C56CA0029BAA9 /* Frameworks */,
 				3B3880651C6C56CA0029BAA9 /* Headers */,
 				3B3880661C6C56CA0029BAA9 /* Resources */,
+				3B133A3F1C6DA19100ADF9CB /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -288,11 +292,29 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3B133A3F1C6DA19100ADF9CB /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3B3880631C6C56CA0029BAA9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B133A411C6DA28F00ADF9CB /* Extensions.swift in Sources */,
 				3B3880A31C6C69740029BAA9 /* CreditCard.swift in Sources */,
 				3B3880A01C6C62680029BAA9 /* CreditCardCell.swift in Sources */,
 				3B38809C1C6C61690029BAA9 /* CreditCardController.swift in Sources */,
