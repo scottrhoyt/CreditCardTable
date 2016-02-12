@@ -8,10 +8,10 @@
 
 import Foundation
 
-public enum CreditCardType {
-    case Visa
-    case MasterCard
-    case Amex
+public enum CreditCardType: String {
+    case Visa = "Visa"
+    case MasterCard = "MasterCard"
+    case Amex = "Amex"
 }
 
 public protocol CreditCard {
