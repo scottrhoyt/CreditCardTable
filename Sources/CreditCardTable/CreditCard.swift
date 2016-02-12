@@ -17,7 +17,7 @@ public enum CreditCardType {
 public protocol CreditCard {
     var type: CreditCardType { get }
     var lastFour: String { get }
-    var expMonth: Int { get }
-    var expYear: Int { get }
+    var expirationMonth: Int { get }
+    var expirationYear: Int { get }
     var isDefault: Bool { get }
 }

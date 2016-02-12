@@ -12,16 +12,16 @@ import UIKit
 class CreditCardCell: UITableViewCell {
     static let reuseId = "CreditCardCell"
     @IBOutlet weak var ccType: UIImageView!
-    @IBOutlet weak var ccExpDate: UILabel!
+    @IBOutlet weak var ccExpirationDate: UILabel!
     @IBOutlet weak var ccNumber: UILabel!
 
     func setCreditCardInfo(creditCard: CreditCard) {
         let lastFour = creditCard.lastFour.last(4)
         ccNumber.text = ccPadding(creditCard) + lastFour
 
-        let expMonth = ("0" + String(creditCard.expMonth)).last(2)
-        let expYear = String(creditCard.expYear).last(2)
-        ccExpDate.text = "\(expMonth)/\(expYear)"
+        let expirationMonth = ("0" + String(creditCard.expirationMonth)).last(2)
+        let expirationYear = String(creditCard.expirationYear).last(2)
+        ccExpirationDate.text = "\(expirationMonth)/\(expirationYear)"
 
         ccType.image = creditCard.type.image()
     }
