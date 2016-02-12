@@ -498,7 +498,7 @@
 		3B3880801C6C56CA0029BAA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = CreditCardTableTests/Info.plist;
+				INFOPLIST_FILE = Sources/CreditCardTableTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.scotthoyt.CreditCardTableTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -508,7 +508,7 @@
 		3B3880811C6C56CA0029BAA9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = CreditCardTableTests/Info.plist;
+				INFOPLIST_FILE = Sources/CreditCardTableTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.scotthoyt.CreditCardTableTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
