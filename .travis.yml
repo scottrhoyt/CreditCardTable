@@ -9,7 +9,7 @@ before_install:
   - ./scripts/upstall-swiftlint.sh
 
 script:
-  - set -o pipefail && xcodebuild -scheme $FRAMEWORK_NAME -project $FRAMEWORK_NAME.xcodeproj clean build test | xcpretty
+  - set -o pipefail && xcodebuild -scheme $FRAMEWORK_NAME -project $FRAMEWORK_NAME.xcodeproj clean build test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
 
 before_deploy:
   - carthage build --no-skip-current
