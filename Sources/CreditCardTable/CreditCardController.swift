@@ -13,14 +13,14 @@ public protocol CreditCardControllerDelegate: class {
     func addCard()
 }
 
-public class CreditCardTableViewController: UITableViewController {
+public class CreditCardController: UITableViewController {
     
     public var creditCards = [CreditCard]()
     public var allowDeletingLastCard = false
     public weak var delegate: CreditCardControllerDelegate?
     
     public convenience init() {
-        self.init(nibName: "CreditCardTableViewController", bundle: NSBundle(forClass: CreditCardTableViewController.self))
+        self.init(nibName: "CreditCardController", bundle: NSBundle(forClass: CreditCardController.self))
     }
         
     override public func viewDidLoad() {
@@ -105,7 +105,7 @@ public class CreditCardTableViewController: UITableViewController {
 
 extension UINib {
     convenience init(nameInCurrentBundle: String) {
-        let bundle = NSBundle(forClass: CreditCardTableViewController.self)
+        let bundle = NSBundle(forClass: CreditCardController.self)
         self.init(nibName: nameInCurrentBundle, bundle: bundle)
     }
 }
