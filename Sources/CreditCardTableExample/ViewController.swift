@@ -11,18 +11,19 @@ import CreditCardTable
 
 struct MyCreditCard: CreditCard {
     var type: CreditCardType
-    var number: String
+    var lastFour: String
     var expMonth: Int
     var expYear: Int
+    var isDefault: Bool
 }
 
 class ViewController: UIViewController {
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        let visa = MyCreditCard(type: .Visa, number: "4242", expMonth: 2, expYear: 2016)
-        let masterCard = MyCreditCard(type: .MasterCard, number: "4242", expMonth: 2, expYear: 2016)
-        let amex = MyCreditCard(type: .Amex, number: "4242", expMonth: 2, expYear: 2016)
+        let visa = MyCreditCard(type: .Visa, lastFour: "4242", expMonth: 2, expYear: 2016, isDefault: false)
+        let masterCard = MyCreditCard(type: .MasterCard, lastFour: "4242", expMonth: 2, expYear: 2016, isDefault: true)
+        let amex = MyCreditCard(type: .Amex, lastFour: "4242", expMonth: 2, expYear: 2016, isDefault: false)
         let cards: [CreditCard] = [visa, masterCard, amex]
         let creditCardController = CreditCardController()
         creditCardController.delegate = self

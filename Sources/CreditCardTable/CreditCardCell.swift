@@ -35,7 +35,7 @@ class CreditCardCell: UITableViewCell {
     @IBOutlet weak var ccNumber: UILabel!
     
     func setCreditCardInfo(creditCard: CreditCard) {
-        let lastFour = creditCard.number.last(4)
+        let lastFour = creditCard.lastFour.last(4)
         ccNumber.text = ccPadding(creditCard) + lastFour
         
         let expMonth = ("0" + String(creditCard.expMonth)).last(2)
