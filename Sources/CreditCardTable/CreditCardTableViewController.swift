@@ -25,8 +25,8 @@ public class CreditCardTableViewController: UITableViewController {
         
     override public func viewDidLoad() {
         super.viewDidLoad()
-        tableView.registerNib(UINib(nameInCurrentBund: "CreditCardCell"), forCellReuseIdentifier: CreditCardCell.reuseId)
-        tableView.registerNib(UINib(nameInCurrentBund: "AddCardCell"), forCellReuseIdentifier: AddCardCell.reuseId)
+        tableView.registerNib(UINib(nameInCurrentBundle: "CreditCardCell"), forCellReuseIdentifier: CreditCardCell.reuseId)
+        tableView.registerNib(UINib(nameInCurrentBundle: "AddCardCell"), forCellReuseIdentifier: AddCardCell.reuseId)
         navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
@@ -55,7 +55,6 @@ public class CreditCardTableViewController: UITableViewController {
         return UITableViewCell()
     }
     
-    // Override to support conditional editing of the table view.
     override public func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         if !allowDeletingLastCard && creditCards.count <= 1 {
             print("Deleting last credit card is disabled.")
@@ -90,6 +89,12 @@ public class CreditCardTableViewController: UITableViewController {
         }
         return nil
     }
+    
+    override public func tableView(tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        if let view = view as? UITableViewHeaderFooterView {
+            view.textLabel?.textAlignment = .Center
+        }
+    }
 
     private func isAddCell(indexPath: NSIndexPath) -> Bool {
         return indexPath.row == (tableView.numberOfRowsInSection(0) - 1)
@@ -99,8 +104,8 @@ public class CreditCardTableViewController: UITableViewController {
 // MARK - UINib
 
 extension UINib {
-    convenience init(nameInCurrentBund: String) {
+    convenience init(nameInCurrentBundle: String) {
         let bundle = NSBundle(forClass: CreditCardTableViewController.self)
-        self.init(nibName: nameInCurrentBund, bundle: bundle)
+        self.init(nibName: nameInCurrentBundle, bundle: bundle)
     }
 }
