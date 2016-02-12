@@ -71,6 +71,7 @@ public class CreditCardController: UITableViewController {
             let deletedCard = creditCards.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             delegate?.deletedCard(deletedCard)
+            updateFooter()
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
@@ -84,10 +85,7 @@ public class CreditCardController: UITableViewController {
     }
     
     override public func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        if !allowDeletingLastCard && creditCards.count <= 1 {
-            return "You must have at least one card stored."
-        }
-        return nil
+        return footerTitle()
     }
     
     override public func tableView(tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
@@ -98,6 +96,20 @@ public class CreditCardController: UITableViewController {
 
     private func isAddCell(indexPath: NSIndexPath) -> Bool {
         return indexPath.row == (tableView.numberOfRowsInSection(0) - 1)
+    }
+    
+    private func updateFooter() {
+        let footer = tableView.footerViewForSection(0)
+        footer?.textLabel?.text = footerTitle()
+        footer?.setNeedsLayout()
+    }
+    
+    private func footerTitle() -> String {
+        if !allowDeletingLastCard && creditCards.count <= 1 {
+            return "You must have at least one card stored."
+        }
+        
+        return "Swipe to delete cards."
     }
 }
 
