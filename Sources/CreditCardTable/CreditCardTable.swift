@@ -30,6 +30,10 @@ public class CreditCardTable: UITableViewController {
         navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    public func reload() {
+        tableView.reloadData()
+    }
+
     // MARK: - UITableViewController
 
     override public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
