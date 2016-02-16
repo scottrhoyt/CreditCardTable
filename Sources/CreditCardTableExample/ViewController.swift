@@ -34,6 +34,8 @@ class ViewController: UIViewController {
         let creditCardTable = CreditCardTable()
         creditCardTable.delegate = self
         creditCardTable.creditCards = cards
+        creditCardTable.addCardForeground = UIColor.whiteColor()
+        creditCardTable.addCardBackground = UIColor.blueColor()
         showViewController(creditCardTable, sender: self)
     }
 }

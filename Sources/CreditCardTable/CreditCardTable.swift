@@ -18,6 +18,8 @@ public class CreditCardTable: UITableViewController {
     public var creditCards = [CreditCard]()
     public var allowDeletingLastCard = false
     public weak var delegate: CreditCardTableDelegate?
+    public var addCardBackground = UIColor.whiteColor()
+    public var addCardForeground = UIColor(colorLiteralRed: 0, green: 122, blue: 255, alpha: 1)
 
     public convenience init() {
         self.init(nibName: "CreditCardTable", bundle: NSBundle.thisBundle)
@@ -47,6 +49,8 @@ public class CreditCardTable: UITableViewController {
     override public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if isAddCell(indexPath) {
             if let cell = tableView.dequeueReusableCellWithIdentifier(AddCardCell.reuseId) as? AddCardCell {
+                cell.backgroundColor = addCardBackground
+                cell.labelColor = addCardForeground
                 return cell
             }
         }
