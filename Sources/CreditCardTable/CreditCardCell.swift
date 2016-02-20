@@ -17,7 +17,7 @@ class CreditCardCell: UITableViewCell {
 
     func setCreditCardInfo(creditCard: CreditCard) {
         let lastFour = creditCard.lastFour.last(4)
-        ccNumber.text = ccPadding(creditCard) + lastFour
+        ccNumber.text = creditCard.type.ccPadding() + lastFour
 
         let expirationMonth = ("0" + String(creditCard.expirationMonth)).last(2)
         let expirationYear = String(creditCard.expirationYear).last(2)
@@ -25,10 +25,22 @@ class CreditCardCell: UITableViewCell {
 
         ccType.image = creditCard.type.image()
     }
+}
 
-    func ccPadding(creditCard: CreditCard) -> String {
-        switch creditCard.type {
+// MARK: - CreditCardType
+
+private extension CreditCardType {
+    func ccPadding() -> String {
+        switch self {
         case .Visa:
+            fallthrough
+        case .Discover:
+            fallthrough
+        case .JCB:
+            fallthrough
+        case .Diners:
+            fallthrough
+        case .Unknown:
             fallthrough
         case .MasterCard:
             return "●●●● ●●●● ●●●● "
@@ -37,11 +49,6 @@ class CreditCardCell: UITableViewCell {
         }
     }
 
-}
-
-// MARK: - CreditCardType
-
-private extension CreditCardType {
     func image() -> UIImage? {
         switch self {
         case .Visa:
@@ -50,6 +57,14 @@ private extension CreditCardType {
             return UIImage(named: "mastercard", inBundle: NSBundle.thisBundle, compatibleWithTraitCollection: nil)
         case .Amex:
             return UIImage(named: "amex", inBundle: NSBundle.thisBundle, compatibleWithTraitCollection: nil)
+        case .Discover:
+            return UIImage(named: "discover", inBundle: NSBundle.thisBundle, compatibleWithTraitCollection: nil)
+        case .Diners:
+            return UIImage(named: "diners", inBundle: NSBundle.thisBundle, compatibleWithTraitCollection: nil)
+        case .JCB:
+            return UIImage(named: "jcb", inBundle: NSBundle.thisBundle, compatibleWithTraitCollection: nil)
+        case .Unknown:
+            return UIImage(named: "unknown", inBundle: NSBundle.thisBundle, compatibleWithTraitCollection: nil)
         }
     }
 }

@@ -30,7 +30,11 @@ class ViewController: UIViewController {
             isDefault: true
         )
         let amex = MyCreditCard(type: .Amex, lastFour: "4242", expirationMonth: 2, expirationYear: 2016, isDefault: false)
-        let cards: [CreditCard] = [visa, masterCard, amex]
+        let discover = MyCreditCard(type: .Discover, lastFour: "4242", expirationMonth: 2, expirationYear: 2016, isDefault: false)
+        let diners = MyCreditCard(type: .Diners, lastFour: "4242", expirationMonth: 2, expirationYear: 2016, isDefault: false)
+        let jcb = MyCreditCard(type: .JCB, lastFour: "4242", expirationMonth: 2, expirationYear: 2016, isDefault: false)
+        let unknown = MyCreditCard(type: .Unknown, lastFour: "4242", expirationMonth: 2, expirationYear: 2016, isDefault: false)
+        let cards: [CreditCard] = [visa, masterCard, amex, discover, diners, jcb, unknown]
         let creditCardTable = CreditCardTable()
         creditCardTable.delegate = self
         creditCardTable.creditCards = cards
