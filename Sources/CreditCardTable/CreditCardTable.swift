@@ -14,12 +14,15 @@ public protocol CreditCardTableDelegate: class {
 }
 
 public class CreditCardTable: UITableViewController {
+    static public var ccNumberFont = UIFont.systemFontOfSize(17)
+    static public var ccExpirationDateFont = UIFont.systemFontOfSize(17)
+    static public var addCardBackground = UIColor.whiteColor()
+    static public var addCardForeground = UIColor(colorLiteralRed: 0, green: 122, blue: 255, alpha: 1)
+    static public var addCardFont = UIFont.systemFontOfSize(17)
 
     public var creditCards = [CreditCard]()
     public var allowDeletingLastCard = false
     public weak var delegate: CreditCardTableDelegate?
-    public var addCardBackground = UIColor.whiteColor()
-    public var addCardForeground = UIColor(colorLiteralRed: 0, green: 122, blue: 255, alpha: 1)
 
     public convenience init() {
         self.init(nibName: "CreditCardTable", bundle: NSBundle.thisBundle)
@@ -36,7 +39,7 @@ public class CreditCardTable: UITableViewController {
         tableView.reloadData()
     }
 
-    // MARK: - UITableViewController
+    // MARK: UITableViewController
 
     override public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -49,8 +52,9 @@ public class CreditCardTable: UITableViewController {
     override public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if isAddCell(indexPath) {
             if let cell = tableView.dequeueReusableCellWithIdentifier(AddCardCell.reuseId) as? AddCardCell {
-                cell.backgroundColor = addCardBackground
-                cell.labelColor = addCardForeground
+                cell.backgroundColor = CreditCardTable.addCardBackground
+                cell.labelColor = CreditCardTable.addCardForeground
+                cell.labelFont = CreditCardTable.addCardFont
                 return cell
             }
         }
@@ -80,8 +84,6 @@ public class CreditCardTable: UITableViewController {
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             delegate?.deletedCard(deletedCard)
             updateFooter()
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
 
@@ -101,6 +103,8 @@ public class CreditCardTable: UITableViewController {
             view.textLabel?.textAlignment = .Center
         }
     }
+
+    // MARK: Helpers
 
     private func isAddCell(indexPath: NSIndexPath) -> Bool {
         return indexPath.row == (tableView.numberOfRowsInSection(0) - 1)

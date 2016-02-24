@@ -11,9 +11,16 @@ import UIKit
 @objc
 class CreditCardCell: UITableViewCell {
     static let reuseId = "CreditCardCell"
+
     @IBOutlet weak var ccType: UIImageView!
     @IBOutlet weak var ccExpirationDate: UILabel!
     @IBOutlet weak var ccNumber: UILabel!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        ccNumber.font = CreditCardTable.ccNumberFont
+        ccExpirationDate.font = CreditCardTable.ccExpirationDateFont
+    }
 
     func setCreditCardInfo(creditCard: CreditCard) {
         let lastFour = creditCard.lastFour.last(4)

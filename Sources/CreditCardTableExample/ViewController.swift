@@ -21,6 +21,8 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+
+        // Make some cards
         let visa = MyCreditCard(type: .Visa, lastFour: "4242", expirationMonth: 2, expirationYear: 2016, isDefault: false)
         let masterCard = MyCreditCard(
             type: .MasterCard,
@@ -34,12 +36,21 @@ class ViewController: UIViewController {
         let diners = MyCreditCard(type: .Diners, lastFour: "4242", expirationMonth: 2, expirationYear: 2016, isDefault: false)
         let jcb = MyCreditCard(type: .JCB, lastFour: "4242", expirationMonth: 2, expirationYear: 2016, isDefault: false)
         let unknown = MyCreditCard(type: .Unknown, lastFour: "4242", expirationMonth: 2, expirationYear: 2016, isDefault: false)
+
         let cards: [CreditCard] = [visa, masterCard, amex, discover, diners, jcb, unknown]
+
+        // Configure the table
+        CreditCardTable.ccNumberFont = UIFont.systemFontOfSize(15, weight: UIFontWeightLight)
+        CreditCardTable.ccExpirationDateFont = UIFont.systemFontOfSize(15, weight: UIFontWeightLight)
+        CreditCardTable.addCardForeground = UIColor.whiteColor()
+        CreditCardTable.addCardBackground = UIColor.blueColor()
+        CreditCardTable.addCardFont = UIFont.systemFontOfSize(15, weight: UIFontWeightLight)
+
+        // Show the table
         let creditCardTable = CreditCardTable()
         creditCardTable.delegate = self
         creditCardTable.creditCards = cards
-        creditCardTable.addCardForeground = UIColor.whiteColor()
-        creditCardTable.addCardBackground = UIColor.blueColor()
+
         showViewController(creditCardTable, sender: self)
     }
 }

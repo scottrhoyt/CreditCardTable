@@ -24,4 +24,10 @@ class AddCardCell: UITableViewCell {
             addPaymentLabel.textColor = labelColor
         }
     }
+
+    var labelFont: UIFont! {
+        didSet {
+            addPaymentLabel.font = labelFont
+        }
+    }
 }
