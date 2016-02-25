@@ -23,24 +23,24 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
 
         // Make some cards
-        let visa = MyCreditCard(type: .Visa, lastFour: "4242", expirationMonth: 2, expirationYear: 2016, isDefault: false)
+        let visa = MyCreditCard(type: .Visa, lastFour: "7563", expirationMonth: 2, expirationYear: 2016, isDefault: false)
         let masterCard = MyCreditCard(
             type: .MasterCard,
             lastFour: "4242",
-            expirationMonth: 2,
+            expirationMonth: 5,
             expirationYear: 2016,
             isDefault: true
         )
-        let amex = MyCreditCard(type: .Amex, lastFour: "4242", expirationMonth: 2, expirationYear: 2016, isDefault: false)
-        let discover = MyCreditCard(type: .Discover, lastFour: "4242", expirationMonth: 2, expirationYear: 2016, isDefault: false)
-        let diners = MyCreditCard(type: .Diners, lastFour: "4242", expirationMonth: 2, expirationYear: 2016, isDefault: false)
-        let jcb = MyCreditCard(type: .JCB, lastFour: "4242", expirationMonth: 2, expirationYear: 2016, isDefault: false)
-        let unknown = MyCreditCard(type: .Unknown, lastFour: "4242", expirationMonth: 2, expirationYear: 2016, isDefault: false)
+        let amex = MyCreditCard(type: .Amex, lastFour: "1275", expirationMonth: 6, expirationYear: 2020, isDefault: false)
+        let discover = MyCreditCard(type: .Discover, lastFour: "0348", expirationMonth: 4, expirationYear: 2017, isDefault: false)
+        let diners = MyCreditCard(type: .Diners, lastFour: "9323", expirationMonth: 5, expirationYear: 2022, isDefault: false)
+        let jcb = MyCreditCard(type: .JCB, lastFour: "6543", expirationMonth: 9, expirationYear: 2018, isDefault: false)
+        let unknown = MyCreditCard(type: .Unknown, lastFour: "4222", expirationMonth: 12, expirationYear: 2016, isDefault: false)
 
         let cards: [CreditCard] = [visa, masterCard, amex, discover, diners, jcb, unknown]
 
         // Configure the table
-        CreditCardTable.ccShowExpiration = false
+        //CreditCardTable.ccShowExpiration = false
         CreditCardTable.ccNumberFont = UIFont.systemFontOfSize(15, weight: UIFontWeightLight)
         CreditCardTable.ccExpirationDateFont = UIFont.systemFontOfSize(15, weight: UIFontWeightLight)
         CreditCardTable.addCardForeground = UIColor.whiteColor()
@@ -63,5 +63,9 @@ extension ViewController: CreditCardTableDelegate {
 
     func addCard() {
         print("Add Card")
+    }
+
+    func selectedCard(card: CreditCard) {
+        print("Selected Card: \(card)")
     }
 }

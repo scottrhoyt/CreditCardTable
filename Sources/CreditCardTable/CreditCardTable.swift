@@ -11,6 +11,7 @@ import UIKit
 public protocol CreditCardTableDelegate: class {
     func deletedCard(card: CreditCard)
     func addCard()
+    func selectedCard(card: CreditCard)
 }
 
 public class CreditCardTable: UITableViewController {
@@ -22,9 +23,10 @@ public class CreditCardTable: UITableViewController {
     static public var addCardForeground = UIColor(colorLiteralRed: 0, green: 122, blue: 255, alpha: 1)
     static public var addCardFont = UIFont.systemFontOfSize(17)
     static public var ccShowExpiration = true
+    static public var allowDeletingLastCard = false
+    static public var allowCardSelection = true
 
     public var creditCards = [CreditCard]()
-    public var allowDeletingLastCard = false
     public weak var delegate: CreditCardTableDelegate?
 
     public convenience init() {
@@ -64,6 +66,7 @@ public class CreditCardTable: UITableViewController {
 
         if let cell = tableView.dequeueReusableCellWithIdentifier(CreditCardCell.reuseId) as? CreditCardCell {
             cell.setCreditCardInfo(creditCards[indexPath.row])
+            cell.selectionStyle = CreditCardTable.allowCardSelection ? .Default : .None
             return cell
         }
 
@@ -71,7 +74,7 @@ public class CreditCardTable: UITableViewController {
     }
 
     override public func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        if !allowDeletingLastCard && creditCards.count <= 1 {
+        if !CreditCardTable.allowDeletingLastCard && creditCards.count <= 1 {
             print("Deleting last credit card is disabled.")
             return false
         } else if isAddCell(indexPath) {
@@ -93,6 +96,8 @@ public class CreditCardTable: UITableViewController {
     override public func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
         if isAddCell(indexPath) {
             delegate?.addCard()
+        } else if CreditCardTable.allowCardSelection {
+            delegate?.selectedCard(creditCards[indexPath.row])
         }
         return nil
     }
@@ -120,7 +125,7 @@ public class CreditCardTable: UITableViewController {
     }
 
     private func footerTitle() -> String {
-        if !allowDeletingLastCard && creditCards.count <= 1 {
+        if !CreditCardTable.allowDeletingLastCard && creditCards.count <= 1 {
             return "You must have at least one card stored."
         }
 
