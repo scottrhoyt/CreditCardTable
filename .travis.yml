@@ -11,16 +11,16 @@ before_install:
 script:
   - set -o pipefail && xcodebuild -scheme $FRAMEWORK_NAME -project $FRAMEWORK_NAME.xcodeproj -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch 64-bit),OS=9.1' clean build test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
 
-before_deploy:
-  - carthage build --no-skip-current
-  - carthage archive $FRAMEWORK_NAME
-
-deploy:
-  provider: releases
-  api_key:
-    secure: N3Ps1c5b7QYEleDi35kFuATVio0k28WeLl9nl5349hIX3GB+f2SKlC9xzRD6e60OntBI96DWkr8CSZN3X7n5e3tkMmNr/nnfILz7/HuGLc3BBQ8Ogbh9bGs9RAsuT1NkcsGkQUvE3f0oVDEDsYKyO42xkxK5ViPl7fVbwoXFcfrCAmurA5UcjrD+UDwummsPLm8OWbDYjvSlUk6nQqCNacRFYp6AUikE58VkzjMdSYHYa8XoQH6BW+ddliEqp0Kbm8Jb76POIB2GfvsvNnjMzaH1uxsHTgzNFJGYtZgLaqVF+SWvfG4uhrHT2e4OCLugPXBbpKZzwOVZ25RfRY0c0jORHeWi9M3d/mdCLYyKNyw6jwdc8RWaiWh/e7FNs0uFRVLjVCoFhSzRbS8kK7tZGrIS8R4+a6RZs09J5yAAU9hDShEZ79LL3Uvxh8/pYlRGcirjJo7MRXt3DRA+Irf5Lhar6AeGlr9ez/FkjZShM5RLnV7v8MG3cIAiDUrph2jKAvd5gaA98gxq/sg7+d/VdXacsksYSZW8NrH2BPbQRuhDujz7Dry1Ms6eR3dPh3GXda8KSDStvQHOCjpUUkLoxcKskcoS7uUu7MFmZwfJyTJdlkoiKYoVGslOlvFhqMvOowVwGgbwQepMa7Z9oYj1oT2wmlDD+NmLKLh/Ba0q6OM=
-  file: $FRAMEWORK_NAME.framework.zip
-  skip_cleanup: true
-  on:
-    repo: scottrhoyt/CreditCardTable
-    tags: true
+#before_deploy:
+#  - carthage build --no-skip-current
+#  - carthage archive $FRAMEWORK_NAME
+#
+#deploy:
+#  provider: releases
+#  api_key:
+#    secure: N3Ps1c5b7QYEleDi35kFuATVio0k28WeLl9nl5349hIX3GB+f2SKlC9xzRD6e60OntBI96DWkr8CSZN3X7n5e3tkMmNr/nnfILz7/HuGLc3BBQ8Ogbh9bGs9RAsuT1NkcsGkQUvE3f0oVDEDsYKyO42xkxK5ViPl7fVbwoXFcfrCAmurA5UcjrD+UDwummsPLm8OWbDYjvSlUk6nQqCNacRFYp6AUikE58VkzjMdSYHYa8XoQH6BW+ddliEqp0Kbm8Jb76POIB2GfvsvNnjMzaH1uxsHTgzNFJGYtZgLaqVF+SWvfG4uhrHT2e4OCLugPXBbpKZzwOVZ25RfRY0c0jORHeWi9M3d/mdCLYyKNyw6jwdc8RWaiWh/e7FNs0uFRVLjVCoFhSzRbS8kK7tZGrIS8R4+a6RZs09J5yAAU9hDShEZ79LL3Uvxh8/pYlRGcirjJo7MRXt3DRA+Irf5Lhar6AeGlr9ez/FkjZShM5RLnV7v8MG3cIAiDUrph2jKAvd5gaA98gxq/sg7+d/VdXacsksYSZW8NrH2BPbQRuhDujz7Dry1Ms6eR3dPh3GXda8KSDStvQHOCjpUUkLoxcKskcoS7uUu7MFmZwfJyTJdlkoiKYoVGslOlvFhqMvOowVwGgbwQepMa7Z9oYj1oT2wmlDD+NmLKLh/Ba0q6OM=
+#  file: $FRAMEWORK_NAME.framework.zip
+#  skip_cleanup: true
+#  on:
+#    repo: scottrhoyt/CreditCardTable
+#    tags: true
