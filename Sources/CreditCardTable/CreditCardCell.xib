@@ -36,13 +36,14 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="bjE-zP-fpB" firstAttribute="leading" secondItem="aVf-XM-D7z" secondAttribute="trailing" constant="125" id="0gz-vE-MLM"/>
                     <constraint firstItem="aVf-XM-D7z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="CDe-ZR-0vA"/>
                     <constraint firstAttribute="leadingMargin" secondItem="aVf-XM-D7z" secondAttribute="leading" id="Pvo-7k-mwu"/>
                     <constraint firstItem="yuc-TM-aOI" firstAttribute="leading" secondItem="aVf-XM-D7z" secondAttribute="trailing" constant="20" id="Q8Z-vS-MxT"/>
                     <constraint firstAttribute="bottomMargin" secondItem="aVf-XM-D7z" secondAttribute="bottom" id="bUr-p8-GCN"/>
                     <constraint firstItem="yuc-TM-aOI" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="cW3-eT-XFD"/>
                     <constraint firstItem="bjE-zP-fpB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="g65-IO-gIr"/>
-                    <constraint firstItem="bjE-zP-fpB" firstAttribute="leading" secondItem="yuc-TM-aOI" secondAttribute="trailing" constant="20" id="hOI-JT-s1t"/>
+                    <constraint firstItem="bjE-zP-fpB" firstAttribute="leading" secondItem="yuc-TM-aOI" secondAttribute="trailing" priority="750" constant="20" id="hOI-JT-s1t"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
