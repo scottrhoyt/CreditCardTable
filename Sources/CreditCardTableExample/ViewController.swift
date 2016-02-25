@@ -40,6 +40,7 @@ class ViewController: UIViewController {
         let cards: [CreditCard] = [visa, masterCard, amex, discover, diners, jcb, unknown]
 
         // Configure the table
+        CreditCardTable.ccShowExpiration = false
         CreditCardTable.ccNumberFont = UIFont.systemFontOfSize(15, weight: UIFontWeightLight)
         CreditCardTable.ccExpirationDateFont = UIFont.systemFontOfSize(15, weight: UIFontWeightLight)
         CreditCardTable.addCardForeground = UIColor.whiteColor()

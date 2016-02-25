@@ -22,14 +22,14 @@
                             <constraint firstAttribute="width" secondItem="aVf-XM-D7z" secondAttribute="height" multiplier="8:5" id="W70-o4-GCI"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11/22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjE-zP-fpB">
-                        <rect key="frame" x="271" y="11" width="40.5" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="●●●● 1234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuc-TM-aOI">
+                        <rect key="frame" x="72" y="11" width="85.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="●●●● ●●●● ●●●● 1234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuc-TM-aOI">
-                        <rect key="frame" x="70.5" y="11.5" width="180" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11/22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjE-zP-fpB">
+                        <rect key="frame" x="177" y="11" width="40.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -37,12 +37,12 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="aVf-XM-D7z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="CDe-ZR-0vA"/>
-                    <constraint firstItem="bjE-zP-fpB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="NYH-yA-L5i"/>
                     <constraint firstAttribute="leadingMargin" secondItem="aVf-XM-D7z" secondAttribute="leading" id="Pvo-7k-mwu"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="bjE-zP-fpB" secondAttribute="trailing" id="RLt-qs-Q4z"/>
-                    <constraint firstItem="yuc-TM-aOI" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Slj-jV-CwM"/>
+                    <constraint firstItem="yuc-TM-aOI" firstAttribute="leading" secondItem="aVf-XM-D7z" secondAttribute="trailing" constant="20" id="Q8Z-vS-MxT"/>
                     <constraint firstAttribute="bottomMargin" secondItem="aVf-XM-D7z" secondAttribute="bottom" id="bUr-p8-GCN"/>
-                    <constraint firstItem="yuc-TM-aOI" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="oMd-1K-8GR"/>
+                    <constraint firstItem="yuc-TM-aOI" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="cW3-eT-XFD"/>
+                    <constraint firstItem="bjE-zP-fpB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="g65-IO-gIr"/>
+                    <constraint firstItem="bjE-zP-fpB" firstAttribute="leading" secondItem="yuc-TM-aOI" secondAttribute="trailing" constant="20" id="hOI-JT-s1t"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

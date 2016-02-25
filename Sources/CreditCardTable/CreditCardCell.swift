@@ -20,6 +20,7 @@ class CreditCardCell: UITableViewCell {
         super.awakeFromNib()
         ccNumber.font = CreditCardTable.ccNumberFont
         ccExpirationDate.font = CreditCardTable.ccExpirationDateFont
+        ccExpirationDate.hidden = !CreditCardTable.ccShowExpiration
     }
 
     func setCreditCardInfo(creditCard: CreditCard) {
@@ -31,6 +32,7 @@ class CreditCardCell: UITableViewCell {
         ccExpirationDate.text = "\(expirationMonth)/\(expirationYear)"
 
         ccType.image = creditCard.type.image()
+        accessoryType = creditCard.isDefault ? .Checkmark : .None
     }
 }
 
@@ -38,22 +40,7 @@ class CreditCardCell: UITableViewCell {
 
 private extension CreditCardType {
     func ccPadding() -> String {
-        switch self {
-        case .Visa:
-            fallthrough
-        case .Discover:
-            fallthrough
-        case .JCB:
-            fallthrough
-        case .Diners:
-            fallthrough
-        case .Unknown:
-            fallthrough
-        case .MasterCard:
-            return "●●●● ●●●● ●●●● "
-        case .Amex:
-            return "●●●● ●●●●●● ●"
-        }
+        return "●●●● "
     }
 
     func image() -> UIImage? {

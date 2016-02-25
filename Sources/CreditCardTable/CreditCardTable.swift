@@ -14,11 +14,14 @@ public protocol CreditCardTableDelegate: class {
 }
 
 public class CreditCardTable: UITableViewController {
+
+    // Public configuration
     static public var ccNumberFont = UIFont.systemFontOfSize(17)
     static public var ccExpirationDateFont = UIFont.systemFontOfSize(17)
     static public var addCardBackground = UIColor.whiteColor()
     static public var addCardForeground = UIColor(colorLiteralRed: 0, green: 122, blue: 255, alpha: 1)
     static public var addCardFont = UIFont.systemFontOfSize(17)
+    static public var ccShowExpiration = true
 
     public var creditCards = [CreditCard]()
     public var allowDeletingLastCard = false
